@@ -24,7 +24,7 @@ RUN pip3 install happybase
 RUN pip install numpy
 
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
-RUN curl -s "http://download.nextag.com/apache/hadoop/common/hadoop-2.9.0/hadoop-2.9.0.tar.gz" | tar -xz -C /usr/local/
+RUN curl -s "https://www.apache.org/dist/hadoop/common/hadoop-2.9.0/hadoop-2.9.0.tar.gz" | tar -xz -C /usr/local/
 RUN cd /usr/local && ln -s ./hadoop-2.9.0 hadoop
 #COPY hadoop-2.9.0.tar.gz /usr/local/
 #RUN cd /usr/local/ && tar xzf hadoop-2.9.0.tar.gz && ln -s ./hadoop-2.9.0 hadoop
@@ -62,7 +62,7 @@ RUN chmod a+rwx -R /usr/local/hbase/
 
 
 # Download and setup Apache Spark
-RUN curl -s "http://apache.mirrors.lucidnetworks.net/spark/spark-2.2.1/spark-2.2.1-bin-hadoop2.7.tgz" | tar -xz -C /usr/local/
+RUN curl -s "https://archive.apache.org/dist/spark/spark-2.2.1/spark-2.2.1-bin-hadoop2.7.tgz" | tar -xz -C /usr/local/
 RUN ln -s /usr/local/spark-2.2.1-bin-hadoop2.7 /usr/local/spark
 #COPY spark-2.2.1-bin-hadoop2.7.tgz /usr/local/
 #RUN cd /usr/local/ && tar xzf spark-2.2.1-bin-hadoop2.7.tgz && ln -s ./spark-2.2.1-bin-hadoop2.7 spark
